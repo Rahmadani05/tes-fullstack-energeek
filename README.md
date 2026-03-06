@@ -26,3 +26,5 @@ php artisan make:model (sesuaikan nama model kalian) -m
 
 - command make seeder
 php artisan make:seeder (sesuaikan nama seeder kalian)
+
+- Mohon maaf tidak sempat mendeploy karena keterbatasan waktu
