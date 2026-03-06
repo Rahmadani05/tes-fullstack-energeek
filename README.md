@@ -19,7 +19,7 @@ Cara jalankan websitenya yaitu dengan cara menjalakan semua server baik backend 
 Instal dependensi Backend Laravel
 1. composer install
 2. php artisan key:generate
-3. php artisan migrate:fresh --seed (untuk mengexport semua migrasi dan seeder di backend)
+3. php artisan migrate:fresh --seed (untuk mengexport semua migrasi dan seeder yang ada di backend ke database)
 
  Setup ENV Backend Laravel
  1. Ubah ENV seperti ini : 
