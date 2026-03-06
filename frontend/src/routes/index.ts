@@ -7,7 +7,7 @@ const router = createRouter({
     {
       path: '/login',
       name: 'login',
-      // Lazy loading component
+      //lazy loading
       component: () => import('../views/LoginView.vue'),
       meta: { requiresGuest: true }
     },
@@ -24,6 +24,12 @@ const router = createRouter({
       meta: { requiresAuth: true }
     },
     {
+      path: '/projects/:id',
+      name: 'project-detail',
+      component: () => import('../views/ProjectDetailView.vue'),
+      meta: { requiresAuth: true }
+    },
+    {
       path: '/tasks',
       name: 'tasks',
       component: () => import('../views/TaskView.vue'),
@@ -32,20 +38,17 @@ const router = createRouter({
   ]
 })
 
-// Navigation Guard (Middleware Auth)
+//navigation guard (middleware auth)
 router.beforeEach((to, from, next) => {
-  // Panggil store auth di dalam guard untuk menghindari error inisialisasi Pinia
+  //panggil store auth di dalam guard untuk menghindari error inisialisasi Pinia
   const authStore = useAuthStore()
   
-  // Jika route butuh login (requiresAuth) DAN user belum login
   if (to.meta.requiresAuth && !authStore.isAuthenticated) {
     next({ name: 'login' })
   } 
-  // Jika route hanya untuk tamu (requiresGuest) DAN user sudah login
   else if (to.meta.requiresGuest && authStore.isAuthenticated) {
     next({ name: 'dashboard' })
   } 
-  // Lanjutkan perjalanan route
   else {
     next()
   }
