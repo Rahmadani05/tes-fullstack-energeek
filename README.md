@@ -1,51 +1,46 @@
- Installasi Backend Laravel 
- 1. Buat folder dulu (contoh : Tes Fullstack Developer Energeek)
- 2. Install laravel : composer create-project laravel/laravel backend
- 3. Install fitur API routing dan Laravel Sanctum (PAT) : php artisan install:api
+# Task Tracker Application
+- Aplikasi manajemen tugas (Task Management) berbasis web. Proyek ini mencakup pengembangan RESTful API dengan Laravel, antarmuka pengguna dengan Vue.js 3 + TypeScript.
 
- Instllasi Frontend Vue 3 + TypeScript
- 1. npm create vue@latest frontend
+<img width="861" height="645" alt="image" src="https://github.com/user-attachments/assets/013882d9-3c3f-48a6-8fa1-e4ec9ea7c21f" />
+<img width="1912" height="936" alt="image" src="https://github.com/user-attachments/assets/723d3303-bdf9-4536-af78-a75a2022a869" />
+<img width="1917" height="933" alt="image" src="https://github.com/user-attachments/assets/c4f5c1a4-12d3-41c4-89ec-1ad9f265f686" />
+<img width="1919" height="936" alt="image" src="https://github.com/user-attachments/assets/a9ec473c-971e-44eb-a02a-c5395d7fabe6" />
 
- Installasi Dependensi Frontend
- 1. npm install
+# Pada Backend rename file .env.example sehingga menjadi .env dan ubah mengikuti berikut :
+- DB_CONNECTION=pgsql
+- DB_HOST=127.0.0.1
+- DB_PORT=5432
+- DB_DATABASE= (isi dengan nama database kalian)
+- DB_USERNAME=postgres
+- DB_PASSWORD= (isi dengan password postgreeSQL kalian)
 
-Cara jalankan websitenya yaitu dengan cara menjalakan semua server baik backend ataupun frontend
-- Backend : php artisan serve
-- Frontend : npm run dev
-(Jalankan website di server lokal frontend (http://localhost:5173/))
+## Install Depedensi Backend Laravel
+- **composer update**
 
-- Dokumentasi API sudah ada di folder bernama foto tes postman, untuk command postmannya ada di folder backend/TaskTracker.postman_collection.json
+## Install Depedensi Frontend Vue.js
+- **npm install**
 
-Instal dependensi Backend Laravel
-1. composer install
-2. php artisan key:generate
-3. php artisan migrate:fresh --seed (untuk mengexport semua migrasi dan seeder yang ada di backend ke database)
+## Cara run yaitu dengan cara jalankan semua server baik Backend maupun Frontend
+- **Backend** : php artisan serve
+- **Frontend** : npm run dev
+- Jalankan localhost milih Frontend
 
- Setup ENV Backend Laravel
- 1. Ubah ENV seperti ini : 
-DB_CONNECTION=pgsql
-DB_HOST=127.0.0.1
-DB_PORT=5432 (port default postgreeSQL)
-DB_DATABASE= (masukkan nama database kalian)
-DB_USERNAME=postgres  # Sesuaikan dengan username postgres-mu
-DB_PASSWORD=password  # Sesuaikan dengan password postgres-mu
+## Fitur Utama
+- **Dashboard** : Statistik ringkasan proyek dan tugas.
+- **Manajemen Proyek** : Operasi CRUD (Create, Read, Update, Delete) lengkap dengan filter.
+- **Manajemen Tugas** : Manajemen tugas dengan fitur Soft Delete.
+- **Kanban Board** : Visualisasi progres tugas per proyek.
+- **Keamanan** : Autentikasi menggunakan Laravel Sanctum.
 
-Setup Backend
-1. Buat controller, model, migrations, seeders sesuai dengan kebutuhan
+## Tech Stack
+- **Backend** : Laravel 12
+- **Frontend** : Vue.js 3 (Vite), Pinia, Tailwind CSS, TypeScript
+- **Database** : PostgreSQL
+- **Testing** : PHPUnit (Backend) & Vitest (Frontend)
 
-- command make controller
-php artisan make:controller (sesuaikan nama controller kalian)
+## Clone Repositori
+- https://github.com/Rahmadani05/Aplikasi-Task-Project-Tracker.git
 
-- command make model
-php artisan make:model (sesuaikan nama model kalian) -m
-
-- command make seeder
-php artisan make:seeder (sesuaikan nama seeder kalian)
-
-- Untuk Unit Test Backend bisa mengetikkan command berikut di terminal backend
-php artisan test
-
--Untuk Unit Test Frontend bisa mengetikkan command berikut di terminal frontend
-npm run test
-
-- Mohon maaf tidak sempat mendeploy karena keterbatasan waktu
+## Akun Login
+- **Email** : admin@coba.id
+- **Password** : tes123
